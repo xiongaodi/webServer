@@ -1,0 +1,71 @@
+<html>
+<script src="js/jquery.min.js"></script>
+<script>
+    function vote() {
+        for (var i = 0; i < document.getElementsByName("option").length; i++) {
+            if (document.getElementsByName("option")[i].checked == true) {
+                console.log(document.getElementsByName("option")[i].value);
+                $.post("/welcome.html", { 'votename': document.getElementsByName("option")[i].value }, function (data, status) { });
+            }
+        }
+    }
+</script>
+
+<div style="text-align:center;font-size: 50px;">
+    <b>Vote for your favorate character!</b>
+    <br>
+    <br>
+</div>
+<body>
+    <div style="text-align:center;font-size: 40px;">
+        <tr>
+            <td>
+                <img src="./Spider man.jpg" title="Spider man" height="200" width="200" />
+                <b><input type="radio" name="option" checked="checked" value="Spider man" style="width :30px;height:30px"
+                        ; />Spider man</b>
+            </td>
+            <td>
+                <img src="./Doctor Strange.jpg" title="Doctor Strange" height="200" width="200" />
+                <b><input type="radio" name="option" value="Doctor Strange" style="width :30px;height:30px" ; />
+                    Doctor Strange</b>
+            </td>
+        </tr>
+        <br>
+        <tr>
+            <td>
+                <img src="./Thor.jpg" title="Ned Stark" height="200" width="200" />
+                <b><input type="radio" name="option" value="Thor" style="width :30px;height:30px" ; />Thor
+                    </b>
+            </td>
+            <td>
+                <img src="./Black Widow.jpg" title="Black Widow" height="200" width="200" />
+                <b><input type="radio" name="option" value="BlackWidow" style="width :30px;height:30px" ; />Black Widow
+                    </b>
+            </td>
+            <td>
+        </tr>
+        <br>
+        <tr>
+            <td>
+                <img src="./Scarlet witch.jpg" title="Scarlet witch" height="200" width="200" />
+                <b><input type="radio" name="option" value="AryaStark" style="width :30px;height:30px" ; />Scarlet witch
+                    </b>
+            </td>
+            <td>
+                <img src="./Iron Man.jpg" title="Iron Man" height="200" width="200" />
+                <b><input type="radio" name="option" value="Iron Man" style="width :30px;height:30px"
+                        ; />Iron Man</b>
+
+            </td>
+        </tr>
+        <br>
+        <br>
+        <button type="button" onclick="vote()" style="text-align:center;font-size: 50px;">vote</button>
+
+    </div>
+    <br>
+    <h1 style="text-align:center;font-size: 50px;"><a href="./base.html">back</a></h1>
+
+</body>
+
+</html>
